@@ -1,32 +1,40 @@
-jQuery(document).ready(function () {
-     
-     $(".phone").mask("+380 (99) 999-99-99"); 
+let first = document.querySelectorAll('.first');
+for (let i = 0; i < first.length; i++){
+    window.addEventListener('mousemove', function(e) { 
+        let x = e.clientX / window.innerWidth;
+        let y = e.clientY / window.innerHeight;     
+        first[i].style.transform = 'translate(-' + x * 15 + 'px, -' + y * 15 + 'px)';
+    });    
+}
+
+let second = document.querySelectorAll('.third');
+for (let i = 0; i < second.length; i++){
+    window.addEventListener('mousemove', function(e) { 
+        let x = e.clientX / window.innerWidth;
+        let y = e.clientY / window.innerHeight;     
+        second[i].style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+    });    
+}
+
+new PanelSnap({
+
+    // parent container
+    container: document.getElementById('projects'),
+
+    // panel selector
+    panelSelector: 'section',
+
+    // threshold
+    directionThreshold: 50,
+
+    // scroll delay
+    delay: 0,
+
+    // duration in milliseconds
+    duration: 300,
+
+    // easing function
+    easing: function(t) { return t }
     
-   
-    jQuery('.send-form').click( function() {
-    	var form = jQuery(this).closest('form');
-    	
-    	if ( form.valid() ) {
-    		form.css('opacity','.5');
-    		var actUrl = form.attr('action');
-
-    		jQuery.ajax({
-    			url: actUrl,
-    			type: 'post',
-    			dataType: 'html',
-    			data: form.serialize(),
-    			success: function(data) {
-    				form.html(data);
-    				form.css('opacity','1');
-                    //form.find('.status').html('форма отправлена успешно');
-                    //$('#myModal').modal('show') // для бутстрапа
-    			},
-    			error:	 function() {
-    			     form.find('.status').html('серверная ошибка');
-    			}
-    		});
-    	}
-    });
-
-
 });
+    
