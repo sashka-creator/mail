@@ -5,7 +5,8 @@
     $email = $_POST['email'];
     $text = $_POST['text'];
 
-	$to = "denis.koblya@gmail.com"; 
+	$to  = 'bigoleksandr@gmail.com' . ', ';  // обратите внимание на запятую
+    $to .= 'abraham063105@gmail.com';
 	$date = date ("d.m.Y"); 
 	$time = date ("h:i");
 	$from = $email;
@@ -21,5 +22,3 @@
 	mail($to, $subject, $msg, "From: $from ");
 
 ?>
-
-<p>Привет, форма отправлена</p>
