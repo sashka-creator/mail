@@ -720,6 +720,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     height: 100vh;
+    z-index: 5;
 }
 
 @media (max-width: 1250px) {
@@ -933,6 +934,14 @@ button {
         max-width: 320px;
     }
 
+    .project.project-four {
+        display: block;
+    }
+
+    .project.project-four.sec {
+        display: none;
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -1081,4 +1090,66 @@ button {
     .project__inner__img.second.h {
         max-width: 100%;
     }
+
+    .footer__inner {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer__inner__left {
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+
+    .footer__inner__right {
+        display: block;
+    }
+    
+    .footer__inner__left {
+        margin-bottom: 20px;
+    }
+
+    .footer__inner__right__item {
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer__inner__right__item.link {
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+        width: fit-content;
+    }
+
+    .footer__inner {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .intro__blur {
+        display: none;
+    }
+
+    .intro__inner__circles {
+        margin-top: 60px;
+    }
+    
+    .project__inner__link.c {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .project__inner__link {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+@media (max-width: 400px) {
+
+    .intro__inner__circles {
+        margin-top: 69px;
+    }
+
 }
